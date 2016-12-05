@@ -76,26 +76,26 @@ controller('cardsCtrl', ['$scope', '$http','$rootScope', function ($scope,$http,
         if ($scope.cadulto === undefined){        
             $scope.cadulto = 0;
         }
-        $scope.costoadulto = '$'+ $scope.cadulto * $scope.adulto;
-        $scope.capacidad -=  $scope.cadulto;
+        $scope.costoadulto = '$'+ ($scope.cadulto * $scope.adulto).toFixed(2);
+        $scope.capacidad +=  (oldValue - newValue)
     })
     $scope.$watch('cvejez',function (newValue,oldValue) {
         if ($scope.cvejez === undefined)
             $scope.cvejez = 0;
-        $scope.costovejez = '$'+ $scope.cvejez * $scope.vejez;
-        $scope.capacidad -=  $scope.cvejez;
+        $scope.costovejez = '$'+ ($scope.cvejez * $scope.vejez).toFixed(2);
+        $scope.capacidad +=  (oldValue - newValue)
     })
     $scope.$watch('cestudiante',function (newValue,oldValue) {
         if ($scope.cestudiante === undefined)
             $scope.cestudiante = 0;
-        $scope.costoestudiante = '$'+ $scope.cestudiante * $scope.estudiante;
-        $scope.capacidad -=  $scope.cestudiante;
+        $scope.costoestudiante = '$'+ ($scope.cestudiante * $scope.estudiante).toFixed(2);
+        $scope.capacidad +=  (oldValue - newValue)
     })
     $scope.$watch('cnino',function (newValue,oldValue) {
         if ($scope.cnino === undefined)
             $scope.cnino = 0;
-        $scope.costonino = '$'+ $scope.cnino * $scope.nino;
-        $scope.capacidad -=  $scope.cnino;
+        $scope.costonino = '$'+ ($scope.cnino * $scope.nino).toFixed(2);
+        $scope.capacidad +=  (oldValue - newValue)
     })       
 
     $scope.$watch('capacidad',function (newValue,oldValue) {

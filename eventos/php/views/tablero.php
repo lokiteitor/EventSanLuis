@@ -8,10 +8,10 @@
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtUHYes67iiktLKn-M-RaYnFjMJO6OyMQ">
         </script>
-        <script src=<?php asset('/libs/js/jquery-ui.min.js') ?>></script>
-        <link rel="stylesheet" href=<?php asset('/libs/css/jquery-ui.theme.min.css') ?>>
-        <link rel="stylesheet" href=<?php asset('/libs/css/jquery-ui.structure.min.css') ?>>
-        <link rel="stylesheet" href=<?php asset('/libs/css/jquery-ui.min.css') ?>>
+        <script src=<?php asset('/js/libs/jquery-ui.min.js') ?>></script>
+        <link rel="stylesheet" href=<?php asset('/css/libs/jquery-ui.theme.min.css') ?>>
+        <link rel="stylesheet" href=<?php asset('/css/libs/jquery-ui.structure.min.css') ?>>
+        <llibsink rel="stylesheet" href=<?php asset('/css/libs/jquery-ui.min.css') ?>>
     </head>
     <body ng-app="tableroApp" ng-controller="cardsCtrl">
         <?php Layout('nav'); ?>
@@ -20,7 +20,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">{{titulo}}</h4>
+                        <h4 class="modal-title" id="tituloevento">{{titulo}}</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
