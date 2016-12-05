@@ -4,6 +4,7 @@
 	require_once 'php/include/Bindeable.php';
 
 	/**
+	* @class PartidaVenta
 	* @brief Esta clase hace referencia a la tabla partida_venta en la base de datos
 	*/
 	class PartidaVenta extends Model implements Bindeable

@@ -4,6 +4,7 @@
     require_once 'php/include/Bindeable.php';
 
     /**
+    * @class Venta
     * @brief Esta clase hace referencia a la tabla usuario en la base de datos
     */
     class Venta extends Model implements Bindeable
@@ -27,8 +28,14 @@
             $stmt->bind_param('iiisi',$this->ID_USUARIO,$this->ID_EVENTO,$this->N_SALA,$this->FECHA_VENTA,$this->FOLIO);
         }
 
+        /**
+         * @brief obtiene la cantidad de ventas de un determinado evento
+         * @param $id id del evento
+         */
+
         public function getVentas($id)
         {
+
             $sql = 'SELECT PV.CANTIDAD, V.N_SALA FROM VENTA as V INNER JOIN PARTIDA_VENTA as PV ON  PV.FOLIO=V.FOLIO WHERE V.ID_EVENTO=?';
             
             $stmt = $this->conexion->prepare($sql);

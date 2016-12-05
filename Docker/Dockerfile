@@ -1,4 +1,3 @@
-# Aun no esta modificado, faltan agregar modulos
 FROM php:apache
 
 EXPOSE 80:80

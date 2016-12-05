@@ -9,6 +9,7 @@ class PublicidadController
 {
     public function registrarEspectacular()
     {
+        // crear un registro de espectacular
         $espectacular = new Espectacular();
         if (isset($_POST['latitud'])) {
             $espectacular->LATITUD = $_POST['latitud'];
@@ -36,6 +37,7 @@ class PublicidadController
 
     public function registrarPublicidad()
     {
+        // crear el registro de una publicidad
         global $site;
         $publicidad = new Publicidad();
 

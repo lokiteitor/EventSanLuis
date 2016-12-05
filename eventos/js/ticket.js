@@ -1,9 +1,14 @@
+/**
+ * @file utilizando la extencion de cookies de angular vuelve a cargar los datos
+ * correspondientes a un evento y la compra
+ */
 angular.module('ticketApp', ['ngCookies'])
 .controller('conceptoCtrl', ['$scope', '$http','$cookies', function ($scope,$http,$cookies) {
     $http({
         method:'GET',
         url:$site.root+'/obtener/info/evento'        
     }).then(function success(response) {
+        // calcular el monto de acuerdo a la cantidad de boletos
         $scope.eventoInfo = response.data[0];
         var precio = $scope.eventoInfo.PRECIO
         $scope.total = 0;

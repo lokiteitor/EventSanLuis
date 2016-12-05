@@ -4,6 +4,7 @@
     require_once 'php/include/Bindeable.php';
 
     /**
+    * @class PartidaPublicidad
     * @brief Esta clase hace referencia a la tabla usuario en la base de datos
     */
     class PartidaPublicidad extends Model implements Bindeable

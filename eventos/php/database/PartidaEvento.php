@@ -4,6 +4,7 @@
 	require_once 'php/include/Bindeable.php';
 
 	/**
+    * @class PartidaEvento
 	* @brief Esta clase hace referencia a la tabla partida_evento en la base de datos
 	*/
 	class PartidaEvento extends Model implements Bindeable
@@ -41,7 +42,11 @@
 
             return $sql;   
         }
-
+        /**
+         * @brief Buscar un registro con los ids proporcianados
+         * @param $id_evento id del evento (clave primaria)
+         * @param $n_sala sala donde se desarrolla (clave primaria)
+         */
         public static function findPartida($id_evento,$n_sala)
         {
             $conexion = self::conectar();
@@ -108,7 +113,10 @@
 
             $this->ID = $this->conexion->insert_id;             
         }        
-
+        /**
+         * @brief obtiene las funciones registradas para un evento
+         * @param $id  id del evento
+         */
         public function getFunciones($id)    
         {
         	$sql = 'SELECT PV.N_SALA ,PV.CAPACIDAD, PV.HORA_INICIO,PV.HORA_FIN ,BL.PRECIO,BL.NINO,

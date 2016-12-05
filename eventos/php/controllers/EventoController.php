@@ -2,7 +2,7 @@
 require_once 'php/database/Evento.php';
 require_once 'php/database/PartidaEvento.php';
 /**
-* 
+* contralador para todas las acciones relacionadas a los eventos
 */
 class EventoController
 {
@@ -85,6 +85,7 @@ class EventoController
 
     public function modificarFuncion()
     {
+        // modicar el registro de una funcion
         $pevento = PartidaEvento::findPartida($_POST['id_evento'],$_POST['id_n_sala']);
 
         if (isset($_POST['modinicio'])) {

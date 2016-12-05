@@ -4,6 +4,7 @@
 	require_once 'php/include/Bindeable.php';
 
 	/**
+	* @class Publicidad
 	* @brief Esta clase hace referencia a la tabla publicidad en la base de datos
 	*/
 	class Publicidad extends Model implements Bindeable
@@ -26,7 +27,10 @@
 		{
 			$stmt->bind_param('dsssd', $this->ID_EVENTO, $this->FECHA_INICIO, $this->FECHA_FIN, $this->URL_IMAGEN, $this->ID_PUBLICIDAD);
 		}
-
+		/**
+		 * @brief obtiene los registros de publicidad activos 
+		 * @param $id id del evento
+		 */
 		public function getActivos($id)
 		{
 			$sql = 'SELECT EV.ID_EVENTO, PB.ID_PUBLICIDAD, EV.TITULO ,PB.FECHA_INICIO,PB.FECHA_FIN,
