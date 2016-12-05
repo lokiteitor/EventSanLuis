@@ -115,7 +115,7 @@
 
         public function getActivos()
           {
-            $sql = 'SELECT ID_EVENTO, TITULO FROM EVENTO WHERE FECHA_INICIO<=CURDATE() AND FECHA_FIN>=CURDATE()';
+            $sql = 'SELECT ID_EVENTO, TITULO FROM EVENTO WHERE FECHA_FIN>=CURDATE()';
             $result = $this->consultar($sql);
 
             return $this->fetch($result);              
@@ -148,7 +148,7 @@
         {
             $sql = "SELECT EV.ID_EVENTO,EV.TITULO, PV.CANTIDAD,VT.FECHA_VENTA FROM VENTA AS VT INNER JOIN PARTIDA_VENTA 
                 AS PV ON PV.FOLIO=VT.FOLIO INNER JOIN EVENTO AS EV ON VT.ID_EVENTO=EV.ID_EVENTO WHERE EV.ID_EVENTO=? AND
-                VT.FECHA_VENTA>=DATE_SUB(CURDATE(),INTERVAL 1 WEEK) ORDER BY VT.FECHA_VENTA";
+                VT.FECHA_VENTA>=DATE_SUB(CURDATE(),INTERVAL 1 WEEK) AND VT.FECHA_VENTA <= CURDATE() ORDER BY VT.FECHA_VENTA";
 
             $stmt = $this->conexion->prepare($sql);
 

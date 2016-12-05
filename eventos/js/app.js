@@ -83,9 +83,9 @@ angular.module('dashApp', ['ngRoute'])
     /**
      * Controlador para la funcion modificar lugar
      */
-
+    $scope.geocoder = new google.maps.Geocoder();
     $scope.geocodificar = function() {
-      var address = $scope.calle + '' + $scope.numero + ' ';
+      var address = $scope.slugar.CALLE + '' + $scope.slugar.N_EXT + ' ';
       changeMap($scope.geocoder, $scope.map, address);
     }
 

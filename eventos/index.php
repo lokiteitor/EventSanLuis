@@ -420,13 +420,14 @@ Route::post('/registrar/lugar',['login','admin'],function ()
 
 });
 
-// TODO : no funciona
-Route::post('/eliminar/lugar',['login','admin'],function ()
+Route::post('/modificar/lugar',['login','admin'],function()
 {
-    $lugar = Lugar::find($_POST['slugar']);
-    $lugar->delete();
-    header("Location: ".getUrl('/admin#/eliminar/lugar'));
+   
+    $ctrl = new LugarController();
+    $ctrl->modificar($_POST['selectlugar']);
+    header("Location: ".getUrl('/admin#/modificar/lugar'));
 });
+
 
 Route::post('/registrar/evento',['login','admin'],function ()
 {
@@ -563,8 +564,23 @@ Route::get('/obtener/eventos/ventas',['login','admin'],function ()
         }
     }
 
+    // ordenar de mayor a menor
+    $max = 0;
+    $mayores = array();
+
+    for ($i=0; $i < 5; $i++) { 
+        $max = array_keys($conteo)[$i];
+        for ($x=$i; $x < count(array_keys($conteo)); $x++) { 
+            if ($conteo[$max]['CANTIDAD'] < $conteo[array_keys($conteo)[$x]]['CANTIDAD']) {
+                $max = array_keys($conteo)[$x];
+            }
+        }
+        $mayores[$max] = $conteo[$max];
+        unset($conteo[$max]);
+    }    
+
     header('Content-Type: application/json');
-    echo json_encode($conteo);
+    echo json_encode($mayores);
 });
 
 Route::post('/obtener/ventas/dia',['login','admin'],function ()

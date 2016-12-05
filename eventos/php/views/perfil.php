@@ -58,7 +58,7 @@
                             <input type="text" name="rfc" class="form-control" ng-model="datos.RFC" >
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary show-sm show-xs">Guardar</button>
+                            <button type="submit" class="btn btn-primary visible-sm visible-xs">Guardar</button>
                         </div>                        
                     </div>
                 </div>

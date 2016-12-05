@@ -21,14 +21,14 @@
               <select name="slugar" class="form-control" required ng-options="x.NOMBRE  for x in ubicaciones" ng-model="slugar" ng-change="centerMap()">
               </select> 
             </div>
-            <form action="{{site + '/registrar/lugar'}}" method="POST" class="form-horizontal" role="form">
+            <form action="{{site + '/modificar/lugar'}}" method="POST" class="form-horizontal" role="form">
               <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" class="form-control" ng-model="slugar.NOMBRE" required>
               </div>
               <div class="form-group">
                 <label for="calle">Calle</label>
-                <input type="text" name="calle" class="form-control" ng-model="slugar.CALLE" required ng-model="calle" ng-blur="geocodificar()">
+                <input type="text" name="calle" class="form-control" ng-model="slugar.CALLE" required ng-blur="geocodificar()">
               </div>
               
     
@@ -47,8 +47,10 @@
                 <label for="Email">Email</label>
                 <input type="text" name="email" class="form-control"  required ng-model="slugar.EMAIL" >
               </div>
-              <input type="hidden" name="latitud" class="form-control" ng-model="slugar.LATITUD">  
-              <input type="hidden" name="longitud" class="form-control" ng-model="slugar.LONGITUD"> 
+              <input type="hidden" name="selectlugar" value="{{slugar.ID_LUGAR}}">
+
+              <input type="hidden" name="latitud" class="form-control" value="{{slugar.LATITUD}}">  
+              <input type="hidden" name="longitud" class="form-control" value="{{slugar.LONGITUD}}"> 
               <div class="form-group">                
                   <button type="submit" class="btn btn-success">Editar</button>
               </div>
