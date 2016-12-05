@@ -1,0 +1,115 @@
+<div class="row">
+  <div class="  col-md-12 col-lg-12">
+    <div class="page-header">
+      <h1>Registrar publicidad para un evento</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <p>Seleccione el evento relacionado</p>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <table id="eventosTable" class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+              <th>Titulo</th>
+              <th>ubicacion</th>
+              <th>Inicio</th>
+              <th>Fin</th>
+            </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Ocultar cuando aun no se selecciona el evento -->
+<div class="row">
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <p>Añada los datos de la publicidad</p>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+
+            <form action="{{site + '/registrar/publicidad'}}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+            <input type="hidden" name="id_evento" class="form-control" value="">
+              <div class="  col-md-4 col-lg-4 col-lg-offset-2 col-md-offset-2">            
+                <div class="form-group">
+                  <label for="inicio">Inicio de campaña</label>
+                  <input type="text" name="inicio" class="form-control"  required>                  
+                </div>
+                <div class="form-group">
+                  <label for="fin">Fin de campaña</label>
+                  <input type="text" name="fin" class="form-control"  required>
+                </div>
+                <div class="form-group">
+                  <label for="image">Imagen de la publicidad</label>
+                  <input type="file" id="cartel" name="imagen">
+                </div>
+                
+            
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+              </div>
+              
+              <div class="  col-md-4 col-lg-4">
+                <output id="preview"></output>              
+              </div>
+            </form>          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script language="javascript">
+
+  $.datetimepicker.setLocale('es');
+
+  $("input[name='inicio']").datetimepicker({
+   i18n:{
+    es:{
+     months:[
+    'Enero','Febrero','Marzo','Abril',
+    'Mayo','Junio','Julio','Agosto',
+    'Septiembre','Octubre','Noviembre','Diciembre',
+     ],
+     dayOfWeek:[
+    "Domi", "Lun", "Mart", "Mier", 
+    "Juev", "Vier", "Saba",
+     ]
+    }
+   },
+   timepicker:false,
+   format:'Y-m-d'
+  });
+
+  $("input[name='fin']").datetimepicker({
+   i18n:{
+    es:{
+     months:[
+    'Enero','Febrero','Marzo','Abril',
+    'Mayo','Junio','Julio','Agosto',
+    'Septiembre','Octubre','Noviembre','Diciembre',
+     ],
+     dayOfWeek:[
+    "Domi", "Lun", "Mart", "Mier", 
+    "Juev", "Vier", "Saba",
+     ]
+    }
+   },
+   timepicker:false,
+   format:'Y-m-d'
+  });  
+
+</script>

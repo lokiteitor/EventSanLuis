@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="  col-md-12 col-lg-12">
+    <div class="page-header">
+      <h1>Registrar la ubicacion de una espectacular</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <p>Ingrese los datos del espectacular</p>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+        <form action="{{site+'/registrar/espectacular'}}" method="POST" class="form-horizontal" role="form">
+            <input type="hidden" name="latitud" class="form-control" ng-model="latitud">  
+            <input type="hidden" name="longitud" class="form-control" ng-model="longitud">
+            <div class="row">
+              <div class="  col-md-6 col-lg-6 col-lg-offset-1 col-md-offset-2">
+                <div class="form-group">
+                  <legend>Detalles del espectacular</legend>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="  col-md-4 col-lg-4 col-lg-offset-2 col-lg-offset-2">
+                <div class="form-group">
+                  <label for="zona">Zona</label>
+                  <select name="zona" class="form-control" required>
+                    <option value="NORTE">Norte</option>
+                    <option value="SUR">Sur</option>
+                    <option value="ESTE">Este</option>
+                    <option value="OESTE">Oeste</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="tipo">Tipo</label>
+                  <select name="tipo" class="form-control" required>
+                    <option value="CARTEL">Cartel</option>
+                    <option value="MAMPARA">Mampara</option>
+                    <option value="ESPECTACULAR">Espectacular</option>
+                  </select>
+                </div>
+
+              </div>
+              
+              <div class="  col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1">
+                <div class="form-group">
+                  <label for="ubicacion">Ubicacion</label>
+                  <input type="text" name="ubicacion" class="form-control" required ng-model="ubicacion" ng-blur="geocodificar()">
+                </div>
+              </div>              
+            </div>
+
+            <div class="row">
+              <div class="  col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
+                  <div id="mapa"></div>
+              </div>
+            </div>                        
+            <br>
+            <div class="row">
+              <div class="  col-md-2 col-lg-2 col-lg-offset-2 col-md-offset-2">
+                        
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+
+              </div>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="  col-md-12 col-lg-12">
+    <div class="page-header">
+      <h1>Eliminar lugar para funciones</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <p>Busca el lugar que deseas eliminar</p>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
+            <form action="{{site + '/eliminar/lugar'}}" method="POST" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="lugar">Selecciona el lugar</label>
+                    <select name="lugar" ng-options="i.NOMBRE for i in lugares" ng-model="slugar"  required class="form-control"></select>
+                    <input type="hidden" name="slugar" class="form-control" value="{{lugar.ID_LUGAR}}">
+                </div>
+
+                <div id="mapa"></div><br>
+
+              <div class="form-group">                
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
+              </div>
+            </form>
+          </div>
+        
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+          <address>
+              <strong>Direccion:</strong><br>
+              {{lugar.N_EXT}} {{lugar.CALLE}} <br>
+              Telefono: {{lugar.TELEFONO}} <br>
+              Email : {{lugar.EMAIL}} <br>
+          </address>
+
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

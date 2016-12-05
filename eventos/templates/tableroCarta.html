@@ -1,0 +1,11 @@
+  <div class="col-sm-6 col-md-4 carta-evento">
+    <div class="thumbnail">
+      <img ng-src="{{evento.URL_IMAGEN}}">
+      <div class="caption">
+        <h3>{{evento.TITULO}}</h3>
+        <p>{{evento.RESENA}}</p>
+        <var>Del:{{evento.FECHA_INICIO}} al: {{evento.FECHA_FIN}}</var>
+        <p bt-comprar id="evento.ID_EVENTO" comprar="comprar(id)"></p>        
+      </div>
+    </div>
+  </div>     

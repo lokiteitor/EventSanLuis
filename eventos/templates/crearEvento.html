@@ -1,0 +1,161 @@
+<div class="row">
+    <div class="  col-md-12 col-lg-12">
+        <div class="page-header">
+            <h1>Crear Evento</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <p>Ingresa los datos correspondientes al
+                evento a publicar</p>
+            </div>
+            <div class="panel-body">
+                <form action="{{site + '/registrar/evento'}}" method="POST" class="form-horizontal" role="form">
+                    <div class="  col-md-4 col-lg-4 col-lg-offset-1 col-md-offset-1">
+                    
+                        <div class="form-group">
+                            <label for="titulo">Titulo</label>
+                            <input type="text" name="titulo" class="form-control"  required>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="tipo" class="form-control" required>
+                                <option value="TEATRO">Teatro</option>
+                                <option value="CINE">Cine</option>
+                                <option value="EXP_ARTISTICA">Exposicion Artistica</option>
+                                <option value="MUSICAL">Musical</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inicio">Fecha de inicio</label>
+                            <input  type="text" name="inicio" class="form-control"  required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fin">Fecha de Finalizacion</label>
+                            <input  type="text" name="fin" class="form-control"  required>
+                        </div>
+                        <div class="form-group">
+                            <label for="artista">Artista</label>
+                            <input type="text" name="artista" class="form-control"  required>
+                        </div>
+                    </div>
+                    <div class=" col-lg-offset-1 col-md-offset-1 col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label for="lugar">Selecciona el lugar</label>
+                            <select name="lugar" ng-options="i.NOMBRE for i in lugares" ng-model="slugar"  required class="form-control"></select>
+                        </div>
+                        <input type="hidden" name="slugar" class="form-control" value="{{lugar.ID_LUGAR}}">
+
+                        <div id="mapa"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="  col-md-8 col-lg-8 col-lg-offset-1 col-md-offset-1">
+                            <div class="form-group">
+                                <label for="antecedentes">Antecedentes</label>
+                                <textarea name="antecedentes" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="row">
+                        <div class="  col-md-8 col-lg-8 col-lg-offset-1 col-md-offset-1">
+                            <div class="form-group">
+                                <label for="resena">Reseña</label>
+                                <textarea name="resena" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="  col-md-4 col-lg-4 col-lg-offset-1 col-md-offset-1">
+                            <div class="form-group">
+                                <legend>Boletos</legend>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="  col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2" >
+                            <div class="form-group">
+                                <label for="precio">Precio Base</label>
+                                <input type="text" name="precio" class="form-control"  required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nino">Descuento Niño</label>
+                                <input type="text" name="nino" class="form-control"  required>
+                            </div>
+                            <div class="form-group">
+                                <label for="estudiante">Descuento Estudiante</label>
+                                <input type="text" name="estudiante" class="form-control"  required>
+                            </div>
+                            <div class="form-group">
+                                <label for="vejez">3er Edad</label>
+                                <input type="text" name="vejez" class="form-control"  required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adulto">Adulto</label>
+                                <input type="text" name="adulto" class="form-control"  required>
+                            </div>                            
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="  col-md-4 col-lg-4 col-lg-offset-1 col-md-offset-1">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script language="javascript">
+	$.datetimepicker.setLocale('es');
+
+	$("input[name='inicio']").datetimepicker({
+	 i18n:{
+	  es:{
+	   months:[
+		'Enero','Febrero','Marzo','Abril',
+		'Mayo','Junio','Julio','Agosto',
+		'Septiembre','Octubre','Noviembre','Diciembre',
+	   ],
+	   dayOfWeek:[
+		"Domi", "Lun", "Mart", "Mier", 
+		"Juev", "Vier", "Saba",
+	   ]
+	  }
+	 },
+	 timepicker:false,
+	 format:'Y-m-d'
+	});
+
+
+    $("input[name='fin']").datetimepicker({
+     i18n:{
+      es:{
+       months:[
+        'Enero','Febrero','Marzo','Abril',
+        'Mayo','Junio','Julio','Agosto',
+        'Septiembre','Octubre','Noviembre','Diciembre',
+       ],
+       dayOfWeek:[
+        "Domi", "Lun", "Mart", "Mier", 
+        "Juev", "Vier", "Saba",
+       ]
+      }
+     },
+     timepicker:false,
+     format:'Y-m-d'
+    });
+
+</script>

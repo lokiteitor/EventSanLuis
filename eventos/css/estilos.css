@@ -1,0 +1,48 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+img.objetivos{
+    width: 140px;
+    height: 140px;
+}
+
+.row.objetivos{
+    padding-left: : 15%;
+    padding-right: : 15%;
+}
+
+#mapa{
+    height: 300px;   
+}
+
+#main{
+    background: #FFF;
+    padding: 2%;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+#page-wrapper{
+    background: #CCC !important;
+}
+
+.cartel-preview{
+    max-height: 160px;
+    max-width: 160px;
+}
+
+#carousel-id img{
+    filter: brightness(50%);
+}
+
+.ventajas{
+    max-width: 206px;
+    max-height: 206px;
+}
+
+#disponibilidad{
+    max-width: 512px;
+    max-height: 512px;
+}    

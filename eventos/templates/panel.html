@@ -1,0 +1,82 @@
+<div class="container-fluid">
+<br>
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 hidden-xs ">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Eventos mas vendidos en la semana</h3>
+			</div>
+			<div class="panel-body">
+				<canvas id="mas-vendidos"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 hidden-xs ">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Usuarios por edad</h3>
+			</div>
+			<div class="panel-body">
+				<canvas id="edades"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 hidden-xs ">
+		<div class="panel panel-info">
+			
+			<div class="panel-heading">
+				<h3 class="panel-title">Ventas por evento en la semana</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="evento">Selecciona el evento</label>
+					<select name="evento" class="form-control" ng-model="sevento" ng-options="x.TITULO for x in eventos" ng-change="grafDia()"></select>
+				</div>
+				<canvas id="vendidos-semana"></canvas>				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 hidden-xs ">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Disponibilidad de un evento</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="devento">Selecciona el evento</label>
+					<select name="devento" class="form-control" ng-model="dsevento" ng-options="x.TITULO for x in eventos" ng-change="selEvento()"></select>
+				</div>
+				<div class="form-group">
+					<label for="nsala">Selecciona la sala</label>
+					<select name="nsala" class="form-control" ng-model="nsevento" ng-options="x.N_SALA for x in salas" ng-change="grafDisp()"></select>
+				</div>
+				<canvas id="disponibilidad"></canvas>
+			</div>
+		</div>		
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-10 col-sm-10 visible-xs ">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Panel title</h3>
+			</div>
+			<div class="panel-body">
+				<strong>Tu pantalla es muy pequeña para ver las graficas</strong>
+			</div>
+		</div>
+	</div>
+</div>
+	
+</div>
+

@@ -1,0 +1,14 @@
+
+Options FollowSymLinks
+RewriteEngine On
+RewriteBase /eventos
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^.*$ index.php [L]
+
+Options All -Indexes

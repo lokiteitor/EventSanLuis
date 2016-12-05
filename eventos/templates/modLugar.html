@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="  col-md-12 col-lg-12">
+    <div class="page-header">
+      <h1>Modificar Lugar para las funciones</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <p>Modifica los datos correspondientes al
+        lugar donde los eventos se realizan</p>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+            <div class="form-group">
+              <label for="slugar">Selecciona el lugar a modificar</label>
+              <select name="slugar" class="form-control" required ng-options="x.NOMBRE  for x in ubicaciones" ng-model="slugar" ng-change="centerMap()">
+              </select> 
+            </div>
+            <form action="{{site + '/registrar/lugar'}}" method="POST" class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" class="form-control" ng-model="slugar.NOMBRE" required>
+              </div>
+              <div class="form-group">
+                <label for="calle">Calle</label>
+                <input type="text" name="calle" class="form-control" ng-model="slugar.CALLE" required ng-model="calle" ng-blur="geocodificar()">
+              </div>
+              
+    
+              <div class="form-group">
+                <label for="numero">Numero Ext.</label>
+                <input type="text" name="numero" class="form-control"  required="required" ng-model="slugar.N_EXT" ng-blur="geocodificar()" >
+              </div>
+
+              <div id="mapa"></div>
+              
+              <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input type="text" name="telefono" class="form-control"  required ng-model="slugar.TELEFONO">
+              </div>
+              <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="text" name="email" class="form-control"  required ng-model="slugar.EMAIL" >
+              </div>
+              <input type="hidden" name="latitud" class="form-control" ng-model="slugar.LATITUD">  
+              <input type="hidden" name="longitud" class="form-control" ng-model="slugar.LONGITUD"> 
+              <div class="form-group">                
+                  <button type="submit" class="btn btn-success">Editar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

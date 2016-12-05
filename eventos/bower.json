@@ -1,0 +1,34 @@
+{
+  "name": "eventsanluis",
+  "authors": [
+    "lokiteitor <lokiteitor513@gmail.com>"
+  ],
+  "description": "Proyecto Final de programacion web II",
+  "main": "",
+  "license": "MIT",
+  "homepage": "www.eventsanluis.ml",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "boostrap#^3.3.7",
+    "jQuery": "^3.1.1",
+    "nouislider": "^9.0.0",
+    "datetimepicker": "^2.5.4",
+    "angular": "^1.5.9",
+    "angular-cookies": "^1.5.9",
+    "angular-route": "^1.5.9",
+    "datatables.net": "^1.10.12",
+    "chart.js": "chartjs#^2.4.0",
+    "metisMenu": "^2.6.0",
+    "datatables.net-bs": "^1.10.12",
+    "datatables.net-buttons-bs": "^1.2.2",
+    "datatables.net-responsive-bs": "^2.1.0",
+    "datatables.net-select-bs": "^1.2.0"
+  }
+}

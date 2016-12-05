@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="  col-md-12 col-lg-12">
+    <div class="page-header">
+      <h1>Registrar Funciones para un evento</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <p>Seleccione el evento relacionado</p>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <table id="eventosTable" class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Titulo</th>
+              <th>ubicacion</th>
+              <th>Inicio</th>
+              <th>Fin</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <p>Ingresa los datos correspondientes a
+        las funciones</p>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-lg-offset-1 col-md-offset-1">
+            <h3>Crear Funciones</h3>
+            <form action="{{site+'/registrar/funciones'}}" method="POST" class="form-horizontal" role="form">
+              <input type="hidden" name="id_evento" class="form-control" value="{{id}}">
+              <div id="campos" ng-repeat="fn in funciones">
+                <div add-funcion funcion="{{fn}}"></div>
+              </div>
+              
+              
+              <div class="row">
+                <button type="button" class="btn btn-default" ng-click="addF()">Añadir</button>
+                <button type="button" class="btn btn-default" ng-click="rmF()">Eliminar</button>
+                <button type="submit" class="btn btn-success">Guardar</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-lg-offset-1 col-md-offset-1">
+            <h3>Editar Funciones</h3>
+            <form action="{{site+'/modificar/funcion'}}" method="POST" class="form-horizontal" role="form">
+              <input type="hidden" name="id_evento" class="form-control" value="{{id}}">
+              <input type="hidden" name="id_n_sala" class="form-control" value="{{idsala}}">
+              <select name="modfuncion" class="form-control" required ng-options="x.N_SALA for x in salas" ng-model="modfuncion" ng-change="showM()">
+              </select>
+              
+              <div class="row" ng-show="showMod">
+                <hr>
+                <div class="form-group">
+                  <label for="modinicio">Inicio de la funcion</label>
+                  <input id="datetimepicker" type="text" name="modinicio" class="form-control"  required ng-model="modfuncion.HORA_INICIO">
+                </div>
+                <div class="form-group">
+                  <label for="modfin">Fin de la funcion</label>
+                  <input id="datetimepicker" type="text" name="modfin" class="form-control"  required ng-model="modfuncion.HORA_FIN">
+                </div>
+                <div class="form-group">
+                  <label for="modcapacidad">Capacidad</label>
+                  <input type="text" name="modcapacidad" class="form-control" required ng-model="modfuncion.CAPACIDAD">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <button type="submit" class="btn btn-success">Modificar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script language="javascript">
+	$("input[name='modinicio']").datetimepicker({
+		datepicker:false,
+		format:'H:i'
+	});
+
+  $("input[name='modfin']").datetimepicker({
+    datepicker:false,
+    format:'H:i'
+  });
+
+
+</script>

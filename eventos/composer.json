@@ -1,0 +1,22 @@
+{
+    "name": "EventSanLuis",
+    "description": "Proyecto Final para Programacion web 2",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David Delgado",
+            "email": "lokiteitor513@gmail.com"
+        }
+    ],
+    "require": {
+        "fzaninotto/faker": "^1.6",
+        "mailgun/mailgun-php": "^2.1",
+        "php-http/curl-client": "^1.6",
+        "guzzlehttp/psr7": "^1.3",
+        "hybridlogic/validation": "^1.0",
+        "google/recaptcha": "^1.1",
+        "setasign/fpdf": "^1.8"
+    }
+
+
+}
